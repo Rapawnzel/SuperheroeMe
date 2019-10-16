@@ -23,7 +23,7 @@ function getNameFem(){
     const sustantivos = ["Spider", "Laser", "Microbe", "Spectre", "Scan", "Badger", "Lighting", "Thunder", "Eagle", "Hurricane", "Storm", "Typhoon", "Fire", "Flame", "Flash", "Night", "Whirlwind", "Wind", "Dawn", "Light", "Dragon", "Wolf", "Vemon", "Cobra", "Viper", "Condor", "Stalker", "Panther", "Puma", "Shadow", "Freeze", "Night", "Hammer", "Mist", "Tulip", "Octopus", "Inferno", "Magma", "Patriot", "Stag", "Rhino", "Mole", "Sloth"];
     let element = getName(titulos_femenino, adjetivos, sustantivos);
     prtScn(element);
-    document.cookie = `name = ${result}`;
+    document.cookie = `name = ${element}`;
     return true;
 
 }
@@ -32,23 +32,27 @@ function getNameMasc(){
     const titulos_masculino = ["Boy", "Man", "Man", "Man", "Man", "Guy", "Mr.", "Doctor" , "El", "Professor", "Captain", "Agent", "The", "The", "The", "The", "Lord", "Sgt.", "General"];
     const adjetivos = ["Imperial", "Amazing", "Spectular", "Dino", "Massive", "Fantastic", "Wonder", "Techno", "Electro", "Hydro", "Giant", "Super", "Incredi", "Daring", "Mega", "Tiny", "Red", "Dark", "Orange", "Screaming", "Green", "Teal", "Blue", "Golden", "Fearless", "Great", "Ameri", "Pyro", "Robo", "American", "Cyber", "Frozen"];
     const sustantivos = ["Spider", "Laser", "Microbe", "Spectre", "Scan", "Badger", "Lighting", "Thunder", "Eagle", "Hurricane", "Storm", "Typhoon", "Fire", "Flame", "Flash", "Night", "Whirlwind", "Wind", "Dawn", "Light", "Dragon", "Wolf", "Vemon", "Cobra", "Viper", "Condor", "Stalker", "Panther", "Puma", "Shadow", "Freeze", "Night", "Hammer", "Mist", "Tulip", "Octopus", "Inferno", "Magma", "Patriot", "Stag", "Rhino", "Mole", "Sloth"];
+    main();
     let element = getName(titulos_masculino, adjetivos, sustantivos);
     prtScn(element);
-    document.cookie = `name = ${result}`;
+    document.cookie = `name = ${element}`;
     return true;
 }
 
 function getLastName(name){
     let splitName = name.split("=");
-    document.write (splitName);
-    return splitName[2];
+    return splitName[1];
 }
 
 function main(){
     let lastName = document.cookie;
     let printName = getLastName(lastName);
-    window.onload = prtScn(printName);
+    prtScn(printName);
+    return true;
 }
+
+window.onload = main();
+
 
 /*
 
